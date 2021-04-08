@@ -15,6 +15,7 @@ export function useWebshop() {
 export function WebshopProvider({children}) {
     const [products, setProducts] = useState("");
     const [singleProduct, setSingleProduct] = useState("");
+    const [productSizes, setProductSizes] = useState("");
     const [user, setUser] = useState("");
     const [loggedIn, setLoggedIn] = useState(false);
 
@@ -32,16 +33,41 @@ export function WebshopProvider({children}) {
         }
     }
 
+    const postUser = async (jsonData) => {
+        let createdUser = await POSTUser(jsonData);
+        return await createdUser;
+    }
+
+    const getSingleProduct= async (productId) => {
+        let product = await GETProductById(productId);
+        setSingleProduct(await product);
+        //Fixa så array med storlekar funkar? Antingen här eller i ProductDetailView
+/*         let sizes = [];
+        for(var i = product.minSize; i<=product.maxSize; i+2)
+        {
+            sizes.push(i);
+        }
+        setProductSizes(sizes);  */      
+    }
+
+    const clearSingleProduct = () => {
+        setSingleProduct("");
+    }
+
     const logOut = () => {
         setLoggedIn(false);
     }
 
     const value = {
         products,
+        singleProduct,
         user,
         loggedIn,
         getAllProducts,
+        getSingleProduct,
+        clearSingleProduct,
         getUser,
+        postUser,
         logOut
     };
 

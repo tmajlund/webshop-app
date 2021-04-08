@@ -27,6 +27,5 @@ export default function Clothes(){
         <div className="mx-auto my-5" style={{ width: "80%" }}>
             <CardDeck>{clothesArray}</CardDeck>
         </div>
-
     )
 }

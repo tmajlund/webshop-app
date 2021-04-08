@@ -7,6 +7,7 @@ import Clothes from './components/Main/Clothes';
 import Shoes from './components/Main/Shoes';
 import ProductsListView from './components/Main/ProductsListView';
 import ProductDetailView from './components/Main/ProductDetailView';
+import CreateUser from './components/Main/CreateUser';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route path="/product/:productId">
               <ProductDetailView />
+            </Route>
+            <Route path="/create-user">
+              <CreateUser />
             </Route>
           </Switch>
         </div>       

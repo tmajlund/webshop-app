@@ -20,7 +20,10 @@ export default function Navigation() {
                 <Nav.Link as={Link} to="/account">
                     Konto
                 </Nav.Link>
-            </Navbar>
+                <Nav.Link as={Link} to="/create-user">
+                    Skapa konto
+                </Nav.Link>
+           </Navbar>
         </>
     );
 }

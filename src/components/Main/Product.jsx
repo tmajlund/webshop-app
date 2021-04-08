@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Product = ({ product }) => {
 
   return (
-    <Card className="my-2"style={{ minWidth: "400px", maxWidth: "400px" }}>
+    <Card className="my-2"style={{ minWidth: "300px", maxWidth: "300px" }}>
         <Card.Img variant="top" src={`/images/${product.productId}.jpg`}/>
         <Card.Body>
             <Card.Title>{product.name}</Card.Title>
@@ -14,6 +14,9 @@ const Product = ({ product }) => {
             Pris: {product.price} kr
             </Card.Subtitle>
             <Card.Text>{product.description}</Card.Text>
+            <Card.Link as={Link} to={`/product/${product.productId}`}>
+              Visa
+            </Card.Link>
         </Card.Body>
     </Card>
   );
