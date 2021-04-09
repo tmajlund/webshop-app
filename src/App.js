@@ -8,6 +8,11 @@ import Shoes from './components/Main/Shoes';
 import ProductsListView from './components/Main/ProductsListView';
 import ProductDetailView from './components/Main/ProductDetailView';
 import CreateUser from './components/Main/CreateUser';
+import Login from './components/Main/Login';
+import Account from './components/Main/Account';
+import SearchView from './components/Main/SearchView';
+import ShoppingCart from './components/Main/ShoppingCart';
+import OrderDetails from './components/Main/OrderDetails';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -31,6 +36,21 @@ function App() {
             </Route>
             <Route path="/create-user">
               <CreateUser />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/search-result">
+              <SearchView />
+            </Route>
+            <Route path="/shopping-cart">
+              <ShoppingCart />
+            </Route>
+            <Route path="/order-details">
+              <OrderDetails />
+            </Route>
+            <Route path="/account">
+              <Account />
             </Route>
           </Switch>
         </div>       

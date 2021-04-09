@@ -24,7 +24,7 @@ export default function Shoes(){
     }
 
     return(
-        <div className="mx-auto my-5" style={{ width: "80%" }}>
+        <div className="mx-auto my-5" style={{ width: "70%" }}>
             <CardDeck>{shoesArray}</CardDeck>
         </div>
     )
