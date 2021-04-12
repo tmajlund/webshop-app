@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 const Product = ({ product }) => {
 
   return (
-    <Card className="mx-auto"style={{ minWidth: "300px", maxWidth: "300px"}}>
-        <Card.Img variant="top" src={`/images/${product.productId}.jpg`}/>
+    <Card className="mx-auto"style={{ minWidth: "300px", maxWidth: "300px"}}>   
+        <Card.Img variant="top" src={`/images/${product.productId}.jpg`} />
         <Card.Body>
             <Card.Title>{product.name}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">

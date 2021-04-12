@@ -4,9 +4,9 @@ export default function OrderDetails() {
     const {orderMade} = useWebshop();
 
  return(
-     <div>
-         <h3>Ny order lagd!</h3>
-         <h4>Ordernummer: {orderMade.orderId}</h4>
+     <div className="order-details-div">
+         <h3 className="h4-account">Ny order lagd!</h3>
+         <h4 className="h4-account">Ordernummer: {orderMade.orderId}</h4>
      </div>
  )
 }

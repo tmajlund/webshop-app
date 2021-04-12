@@ -11,6 +11,7 @@ export default function ShoppingCart() {
 
     let cartProducts;
     let totalPrice;
+    let totalProducts;
 
     if(shoppingCart)
     {
@@ -18,7 +19,8 @@ export default function ShoppingCart() {
             return <ShoppingCartItem item={item} key={item.productId} />
         });
 
-        totalPrice = shoppingCart.reduce((prev, cur) => prev + cur.totalPrice, 0);
+        totalPrice = shoppingCart.reduce((prev, cur) => parseInt(prev) + parseInt(cur.totalPrice), 0);
+        totalProducts = shoppingCart.reduce((prev, cur) => parseInt(prev) + parseInt(cur.quantity), 0);
     }
 
     const handleClick = async (e) => {
@@ -50,7 +52,7 @@ export default function ShoppingCart() {
                             <div className="col">
                                 <h4><b>Varukorg</b></h4>
                             </div>
-                            <div className="col align-self-center text-right text-muted">{shoppingCart.length} varor</div>
+                            <div className="col align-self-center text-right text-muted">{totalProducts} varor</div>
                         </div>
                     </div>
                     {cartProducts}
@@ -61,7 +63,7 @@ export default function ShoppingCart() {
                     </div>
                     <hr />
                     <div className="row">
-                        <div className="col">Antal varor: {shoppingCart.length}</div>
+                        <div className="col">Antal varor: {totalProducts}</div>
                         <div className="col text-right">SEK {totalPrice}</div>
                     </div>
                     <hr />

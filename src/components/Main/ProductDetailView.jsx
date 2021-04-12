@@ -63,8 +63,7 @@ export default function ProductDetailView() {
             }
             addProductToCart(newProductItem);
             setSuccess(true);
-        }
-        
+        }       
     }
 
     return(        

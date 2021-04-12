@@ -26,6 +26,7 @@ export function WebshopProvider({children}) {
 
     const getAllProducts = async () => {
         let productArray = await GETProducts();
+        await productArray.sort((a,b) => (b.category > a.category) ? 1 : -1)
         setProducts(await productArray);
     }
 
@@ -38,11 +39,17 @@ export function WebshopProvider({children}) {
 
         let productArray = await GETProducts();
 
-        let filteredProducts = productArray.filter((item) => {
+/*         let filteredProducts = productArray.filter((item) => {
             return (item.name || item.description || item.category)
                     .toLowerCase().includes(searchString.toLowerCase())
-        });
 
+        }); */
+        let filteredProducts = productArray.filter((item) => {
+            return item.name.toLowerCase().includes(searchString.toLowerCase()) || 
+                    item.description.toLowerCase().includes(searchString.toLowerCase()) || 
+                    item.category.toLowerCase().includes(searchString.toLowerCase())
+        });
+            
         history.push("/search-result")
         setProducts(filteredProducts);        
     }
@@ -74,7 +81,26 @@ export function WebshopProvider({children}) {
     }
 
     const addProductToCart = (obj) => {
-        setShoppingCart([...shoppingCart, obj]);
+        
+        if((shoppingCart.find(item => item.productId === obj.productId)) === undefined)
+        {
+            setShoppingCart([...shoppingCart, obj]);
+        }
+        else
+        {
+            //let existingObj = shoppingCart.find(item => item.productId === obj.productId);
+            let updatedArray = shoppingCart.map(item => {
+                if(item.productId === obj.productId && item.size === obj.size)
+                {
+                    item.quantity = parseInt(item.quantity) + parseInt(obj.quantity)
+                    item.totalPrice = parseInt(item.totalPrice) + parseInt(obj.totalPrice);
+                    return item;
+                }
+            });
+
+            setShoppingCart(updatedArray);
+        }
+               
     }
 
     const removeProductFromCart = (obj => {
