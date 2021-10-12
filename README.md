@@ -18,7 +18,7 @@ To run the app you need following:
 
 1. Clone this repository
 2. Run `webshop-sqript.sql`. Make sure you have the correct path in the script, depending on where you have SSMS installed.
-3. Unzip `WebshopWebAPI.zip` and run it using Visual Studio. Have it running in the background.
+3. Run `WebshopWebAPI` using Visual Studio. Have it running in the background.
 4. Open command prompt and change directory to the application
 5. Run `npm install`
 6. Run `npm start` 
