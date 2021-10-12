@@ -1,6 +1,6 @@
 # Webshop App
 
-School project building a webshop. Built with React, C# API and Sql Server.
+School project building a webshop. Built with React, C# API and SQL Server.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
