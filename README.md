@@ -4,6 +4,9 @@ School project building a webshop. Built with React, C# API and Sql Server.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+**Startpage**<br>
+<img src="https://github.com/tmajlund/webshop-app/blob/master/startpage.jpg" height="500">
+
 # Prerequisites
 
 To run the app you need following:
